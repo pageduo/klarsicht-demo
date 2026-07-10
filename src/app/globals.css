@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #0b1420;
+  --color-slate: #14233a;
+  --color-slate-light: #1f3355;
+  --color-paper: #f7f5ef;
+  --color-mist: #e8e4da;
+  --color-stone: #6b6f79;
+  --color-cyan: #16bfae;
+  --color-cyan-light: #6fe4d4;
+  --color-cyan-dark: #0c8b7e;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-slate: var(--color-slate);
+  --color-slate-light: var(--color-slate-light);
+  --color-paper: var(--color-paper);
+  --color-mist: var(--color-mist);
+  --color-stone: var(--color-stone);
+  --color-cyan: var(--color-cyan);
+  --color-cyan-light: var(--color-cyan-light);
+  --color-cyan-dark: var(--color-cyan-dark);
+
+  --font-display: var(--font-instrument-serif);
+  --font-body: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+html {
+  /*
+   * Intentionally NOT smooth: pinned/sticky sections (Card-Stack, Horizontal-
+   * Scroll, Video-Scrolly) are several viewport heights tall; a smooth-scrolled
+   * anchor jump through that range makes the page look frozen for a few
+   * seconds. Instant jumps are the reliable choice here.
+   */
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), system-ui, serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+::selection {
+  background: var(--color-cyan);
+  color: var(--color-ink);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+/* Custom cursor: hide the native cursor only where the fine-pointer cursor is active. */
+.cursor-none-fine {
+  cursor: none;
+}
