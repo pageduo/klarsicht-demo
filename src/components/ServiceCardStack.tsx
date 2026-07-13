@@ -22,6 +22,11 @@ const ledgerPattern: React.CSSProperties = {
     "repeating-linear-gradient(to bottom, transparent, transparent 27px, rgba(11,20,32,0.05) 28px)",
 };
 
+// Feste (nicht zufällige) Rotations-/Versatzwerte pro Karte, damit das Deck
+// wie handgefächert wirkt, statt beim Server-Render/Hydration zu flackern.
+const ROTATE = [-3, 4, -2.5, 3.5, -4, 2];
+const OFFSET_X = [-12, 10, -8, 14, -10, 8];
+
 function Card({
   index,
   active,
@@ -37,21 +42,47 @@ function Card({
   const isFront = diff === 0;
   const isUpcoming = diff > 0 && diff <= 3;
   const isPast = diff < 0;
+  const rotate = ROTATE[index % ROTATE.length];
+  const offsetX = OFFSET_X[index % OFFSET_X.length];
 
   const target = isFront
-    ? { scale: 1, y: 0, opacity: 1 }
+    ? { scale: 1, y: 0, x: 0, rotate: 0, rotateX: 0, opacity: 1, filter: "blur(0px)" }
     : isUpcoming
-      ? { scale: 1 - diff * 0.035, y: -diff * 18, opacity: 0.82 - diff * 0.2 }
+      ? {
+          scale: 1 - diff * 0.045,
+          y: -diff * 20,
+          x: offsetX * (0.45 + diff * 0.18),
+          rotate: rotate * (0.4 + diff * 0.22),
+          rotateX: 5 + diff * 2.5,
+          opacity: 0.85 - diff * 0.24,
+          filter: `blur(${diff * 1.1}px)`,
+        }
       : isPast
-        ? { scale: 0.94, y: 36, opacity: 0 }
-        : { scale: 0.86, y: -70, opacity: 0 };
+        ? {
+            scale: 0.86,
+            y: 70,
+            x: offsetX * 1.5,
+            rotate: rotate * 3.4,
+            rotateX: -12,
+            opacity: 0,
+            filter: "blur(6px)",
+          }
+        : { scale: 0.8, y: -100, x: 0, rotate: 0, rotateX: 12, opacity: 0, filter: "blur(4px)" };
 
   return (
     <motion.div
       animate={target}
       initial={false}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      style={{ zIndex: isFront ? 50 : 50 - Math.abs(diff), pointerEvents: isFront ? "auto" : "none" }}
+      transition={{
+        default: { type: "spring", stiffness: 240, damping: 24, mass: 0.9 },
+        opacity: { duration: 0.4 },
+        filter: { duration: 0.4 },
+      }}
+      style={{
+        zIndex: isFront ? 50 : 50 - Math.abs(diff),
+        pointerEvents: isFront ? "auto" : "none",
+        transformPerspective: 1400,
+      }}
       className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-[1.75rem] border border-ink/10 bg-paper p-7 shadow-[0_35px_70px_-30px_rgba(11,20,32,0.4)] sm:p-10"
       aria-hidden={!isFront}
     >
@@ -113,10 +144,12 @@ function Card({
 }
 
 // Gepinntes "Karteikarten"-Scrollytelling: Leistungs-Karten liegen als
-// gestapeltes Deck im Bildschirm. Der Scroll-Fortschritt bestimmt einen
+// handgefächertes Deck im Bildschirm. Der Scroll-Fortschritt bestimmt einen
 // diskreten "aktiven Index" (statt jede Karte einzeln an den Scroll zu
-// koppeln) — die kommenden Karten peeken sichtbar hinter der aktiven hervor,
-// bereits gezeigte schieben sich sanft nach hinten weg.
+// koppeln) — kommende Karten peeken leicht gedreht/geneigt hinter der
+// aktiven hervor (inkl. Tiefenunschärfe), bereits gezeigte werden mit einem
+// Dreh nach hinten weggewischt. Federphysik statt linearer Easing-Kurven
+// sorgt für ein spürbar "griffigeres" Scrollgefühl.
 export default function ServiceCardStack() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
@@ -138,15 +171,31 @@ export default function ServiceCardStack() {
           Sechs Leistungsfelder, eine Kanzlei.
         </h2>
       </div>
-      <div
-        ref={containerRef}
-        style={{ height: `${services.length * 70}vh` }}
-        className="relative"
-      >
-        <div className="sticky top-0 flex h-screen items-center px-5 py-16 sm:px-8">
+      <div ref={containerRef} style={{ height: `${services.length * 70}vh` }} className="relative">
+        <div className="sticky top-0 flex h-screen flex-col items-center justify-center gap-8 px-5 py-16 sm:px-8">
           <div className="relative mx-auto h-[64vh] w-full max-w-3xl">
+            <motion.div
+              aria-hidden
+              animate={{ scale: [1, 1.05, 1], opacity: [0.12, 0.2, 0.12] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-x-10 inset-y-16 -z-10 rounded-full bg-gold blur-[90px]"
+            />
             {services.map((service, i) => (
               <Card key={service.key} index={i} active={active} total={services.length} service={service} />
+            ))}
+          </div>
+
+          <div className="flex w-full max-w-3xl gap-2 px-1">
+            {services.map((service, i) => (
+              <span key={service.key} className="h-1 flex-1 overflow-hidden rounded-full bg-ink/10">
+                <motion.span
+                  className="block h-full rounded-full bg-gold"
+                  initial={false}
+                  animate={{ scaleX: i <= active ? 1 : 0 }}
+                  style={{ transformOrigin: "left" }}
+                  transition={{ type: "spring", stiffness: 200, damping: 30 }}
+                />
+              </span>
             ))}
           </div>
         </div>
