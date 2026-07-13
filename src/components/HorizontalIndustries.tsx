@@ -33,7 +33,7 @@ export default function HorizontalIndustries() {
   return (
     <section className="bg-ink">
       <div className="mx-auto max-w-7xl px-5 pt-20 sm:px-8">
-        <p className="eyebrow text-cyan-light">{"// Branchen"}</p>
+        <p className="eyebrow text-gold-light">{"// Branchen"}</p>
         <h2 className="mt-4 max-w-xl font-display text-3xl font-normal text-paper sm:text-5xl">
           Wir kennen Ihre Branche von innen.
         </h2>

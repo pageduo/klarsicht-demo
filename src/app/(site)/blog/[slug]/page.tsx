@@ -59,7 +59,7 @@ export default async function BlogPostPage({
             </div>
             <Link
               href="/blog"
-              className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-cyan-dark hover:text-ink"
+              className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark hover:text-ink"
             >
               <span aria-hidden>←</span> Zurück zum Blog
             </Link>

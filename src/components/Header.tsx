@@ -48,7 +48,7 @@ export default function Header() {
             }`}
           >
             {company.name}
-            <span className={compact ? "text-cyan-dark" : "text-cyan-light"}>.</span>
+            <span className={compact ? "text-gold-dark" : "text-gold-light"}>.</span>
           </Link>
 
           <div className="flex items-center gap-4">
@@ -62,7 +62,7 @@ export default function Header() {
             </a>
             <Link
               href="/kontakt"
-              className="hidden rounded-full bg-cyan px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-cyan-light sm:block"
+              className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-gold-light sm:block"
             >
               Erstgespräch vereinbaren
             </Link>
@@ -110,9 +110,9 @@ export default function Header() {
                   <Link
                     href={page.href}
                     onClick={() => setMenuOpen(false)}
-                    className="font-display text-2xl font-normal text-paper/90 transition hover:text-cyan-light sm:text-3xl"
+                    className="font-display text-2xl font-normal text-paper/90 transition hover:text-gold-light sm:text-3xl"
                   >
-                    <span className="mr-3 font-mono text-sm text-cyan-light">{page.number}</span>
+                    <span className="mr-3 font-mono text-sm text-gold-light">{page.number}</span>
                     {page.label}
                   </Link>
                 </motion.div>

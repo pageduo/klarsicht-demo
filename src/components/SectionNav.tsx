@@ -4,39 +4,44 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navPages } from "@/lib/content";
 
-// Die primäre Seiten-Navigation der Website: eine nummerierte, vertikale
-// Leiste am rechten Bildschirmrand statt einer klassischen Kopfzeilen-Nav.
-// Da die Seite mehrseitig (nicht Anker-basiert) ist, markiert sich der
-// aktive Eintrag über die aktuelle Route statt über einen Scroll-Observer.
+// Persistente Seiten-Übersicht oben rechts: alle Sektionen sind jederzeit mit
+// vollem Label sichtbar (kein Hover-Reveal), damit man sich beim Scrollen
+// nie neu orientieren muss. Da die Seite mehrseitig (nicht Anker-basiert)
+// ist, markiert sich der aktive Eintrag über die aktuelle Route.
 export default function SectionNav() {
   const pathname = usePathname();
 
   return (
     <nav
-      aria-label="Seitennavigation"
-      className="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-end gap-3 rounded-full border border-paper/10 bg-ink/85 px-3 py-4 shadow-lg backdrop-blur xl:flex"
+      aria-label="Seitenübersicht"
+      className="fixed right-5 top-24 z-40 hidden w-56 flex-col gap-0.5 rounded-2xl border border-paper/10 bg-ink/90 p-4 shadow-xl backdrop-blur xl:flex"
     >
+      <p className="eyebrow mb-2 px-2 text-gold-light/70">Übersicht</p>
       {navPages.map((page) => {
         const isActive =
           page.href === "/" ? pathname === "/" : pathname.startsWith(page.href);
         return (
-          <Link key={page.href} href={page.href} className="group flex items-center gap-3">
+          <Link
+            key={page.href}
+            href={page.href}
+            className={`group flex items-center gap-3 rounded-lg border-l-2 px-2 py-1.5 transition-colors duration-200 ${
+              isActive ? "border-gold bg-paper/[0.06]" : "border-transparent hover:border-paper/25"
+            }`}
+          >
             <span
-              className={`whitespace-nowrap font-mono text-[11px] tracking-wide transition-all duration-300 ${
-                isActive
-                  ? "translate-x-0 opacity-100 text-paper"
-                  : "pointer-events-none translate-x-2 opacity-0 text-paper/70 group-hover:pointer-events-auto group-hover:translate-x-0 group-hover:opacity-100"
+              className={`font-mono text-[10px] tabular-nums transition-colors duration-200 ${
+                isActive ? "text-gold-light" : "text-paper/40 group-hover:text-paper/60"
               }`}
             >
-              {page.number} — {page.label}
+              {page.number}
             </span>
             <span
-              className={`h-2 w-2 shrink-0 rounded-full border transition-all duration-300 ${
-                isActive
-                  ? "scale-125 border-cyan bg-cyan"
-                  : "border-paper/40 bg-transparent group-hover:border-cyan"
+              className={`text-sm transition-colors duration-200 ${
+                isActive ? "font-medium text-paper" : "text-paper/55 group-hover:text-paper/85"
               }`}
-            />
+            >
+              {page.label}
+            </span>
           </Link>
         );
       })}

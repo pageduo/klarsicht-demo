@@ -30,7 +30,7 @@ export default async function LoginPage({
       <div className="w-full max-w-sm rounded-3xl bg-slate p-8 text-center sm:p-10">
         <p className="font-display text-2xl font-normal italic text-paper">
           {company.name}
-          <span className="text-cyan">.</span>
+          <span className="text-gold">.</span>
         </p>
         <h1 className="mt-6 font-display text-xl font-normal text-paper">Geschützter Bereich</h1>
         <p className="mt-3 text-sm leading-relaxed text-paper/60">
@@ -39,12 +39,12 @@ export default async function LoginPage({
         </p>
 
         {message && (
-          <p className="mt-5 rounded-xl bg-ink/60 px-4 py-3 text-sm text-cyan-light">{message}</p>
+          <p className="mt-5 rounded-xl bg-ink/60 px-4 py-3 text-sm text-gold-light">{message}</p>
         )}
 
         <a
           href={startUrl}
-          className="mt-8 flex items-center justify-center gap-3 rounded-full bg-cyan px-6 py-3.5 text-sm font-semibold text-ink transition hover:bg-cyan-light"
+          className="mt-8 flex items-center justify-center gap-3 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-ink transition hover:bg-gold-light"
         >
           <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden>
             <path

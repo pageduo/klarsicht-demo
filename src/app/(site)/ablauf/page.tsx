@@ -26,7 +26,7 @@ export default function AblaufPage() {
             {processSteps.map((step, i) => (
               <Reveal key={step.number} delay={i * 0.08}>
                 <div className="flex gap-6 border-t border-ink/10 py-8 first:border-t-0 sm:gap-10">
-                  <span className="font-mono text-sm text-cyan-dark">{step.number}</span>
+                  <span className="font-mono text-sm text-gold-dark">{step.number}</span>
                   <div>
                     <h3 className="font-display text-xl font-normal text-ink sm:text-2xl">
                       {step.title}

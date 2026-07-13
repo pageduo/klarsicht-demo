@@ -10,7 +10,7 @@ export default function CTABanner({
   description?: string;
 }) {
   return (
-    <section className="bg-cyan py-20 sm:py-28">
+    <section className="bg-gold py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
         <Reveal>
           <h2 className="font-display text-3xl font-normal leading-tight text-ink sm:text-5xl">

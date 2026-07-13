@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 // Zwei Cursor-Modi, gesteuert über Data-Attribute auf beliebigen Elementen:
 //  - data-cursor="Label"        → Textpille folgt dem Cursor (z. B. "Ansehen").
-//  - data-cursor-shape="doc"    → Cyan-Bubble mit einem zum Inhalt passenden
+//  - data-cursor-shape="doc"    → Gold-Bubble mit einem zum Inhalt passenden
 //                                  Icon (z. B. Dokument-Icon über Leistungs-,
 //                                  Waage-Icon über Prüfungs-Karten).
 const shapeIcons: Record<string, React.ReactNode> = {
@@ -117,7 +117,7 @@ export default function CustomCursor() {
             animate={{ scale: 1, opacity: 1, rotate: 0 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="flex h-16 w-16 items-center justify-center rounded-full bg-cyan text-ink shadow-lg"
+            className="flex h-16 w-16 items-center justify-center rounded-full bg-gold text-ink shadow-lg"
           >
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
               {shapeIcons[shape] ?? null}

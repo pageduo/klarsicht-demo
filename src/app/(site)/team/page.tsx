@@ -41,7 +41,7 @@ export default function TeamPage() {
                     />
                   </div>
                   <h3 className="mt-5 font-display text-lg font-normal text-ink">{member.name}</h3>
-                  <p className="text-sm font-medium text-cyan-dark">{member.role}</p>
+                  <p className="text-sm font-medium text-gold-dark">{member.role}</p>
                   <p className="mt-2 text-sm leading-relaxed text-stone">{member.bio}</p>
                 </TiltCard>
               </Reveal>

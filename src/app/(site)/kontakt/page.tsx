@@ -62,10 +62,10 @@ export default function KontaktPage() {
                 <div>
                   <p className="eyebrow mb-2 text-stone">Kontakt</p>
                   <p className="text-sm leading-relaxed text-ink">
-                    <a href={company.phoneHref} className="block hover:text-cyan-dark">
+                    <a href={company.phoneHref} className="block hover:text-gold-dark">
                       {company.phone}
                     </a>
-                    <a href={`mailto:${company.email}`} className="block hover:text-cyan-dark">
+                    <a href={`mailto:${company.email}`} className="block hover:text-gold-dark">
                       {company.email}
                     </a>
                   </p>

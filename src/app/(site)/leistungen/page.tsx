@@ -36,28 +36,45 @@ export default function LeistungenPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
               <Reveal key={service.key} delay={i * 0.06}>
-                <TiltCard
-                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-ink/10 bg-mist p-8"
-                >
-                  <div data-cursor-shape={service.icon}>
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan/15 text-cyan-dark">
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <path
-                          d={iconPaths[service.icon]}
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          fill="none"
-                        />
-                      </svg>
-                    </span>
+                <TiltCard className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-ink/10 bg-mist p-8">
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-8 -right-3 select-none font-display text-[8rem] leading-none text-ink/[0.04]"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div data-cursor-shape={service.icon} className="relative">
+                    <div className="flex items-start justify-between">
+                      <span className="flex h-14 w-14 items-center justify-center rounded-xl border border-gold/30 bg-gold/10 text-gold-dark">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d={iconPaths[service.icon]}
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            fill="none"
+                          />
+                        </svg>
+                      </span>
+                      <span className="font-mono text-lg font-medium text-ink">{service.stat.value}</span>
+                    </div>
                     <h3 className="mt-6 font-display text-xl font-normal text-ink sm:text-2xl">
                       {service.title}
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-stone">{service.description}</p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {service.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-ink/12 px-3 py-1 font-mono text-[10px] uppercase tracking-wide text-stone"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-dark opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="relative mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     Erstgespräch dazu vereinbaren <span aria-hidden>→</span>
                   </span>
                 </TiltCard>

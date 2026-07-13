@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <p className="font-display text-xl font-normal italic">
               {company.name}
-              <span className="text-cyan-light">.</span>
+              <span className="text-gold-light">.</span>
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-paper/60">
               {company.subline}

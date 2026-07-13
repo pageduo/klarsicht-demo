@@ -7,9 +7,9 @@
   --color-paper: #f7f5ef;
   --color-mist: #e8e4da;
   --color-stone: #6b6f79;
-  --color-cyan: #16bfae;
-  --color-cyan-light: #6fe4d4;
-  --color-cyan-dark: #0c8b7e;
+  --color-gold: #b3893c;
+  --color-gold-light: #e2c27c;
+  --color-gold-dark: #7c5c22;
 }
 
 @theme inline {
@@ -19,9 +19,9 @@
   --color-paper: var(--color-paper);
   --color-mist: var(--color-mist);
   --color-stone: var(--color-stone);
-  --color-cyan: var(--color-cyan);
-  --color-cyan-light: var(--color-cyan-light);
-  --color-cyan-dark: var(--color-cyan-dark);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-gold-dark: var(--color-gold-dark);
 
   --font-display: var(--font-instrument-serif);
   --font-body: var(--font-plex-sans);
@@ -53,7 +53,7 @@ h1, h2, h3, h4, .font-display {
 }
 
 ::selection {
-  background: var(--color-cyan);
+  background: var(--color-gold);
   color: var(--color-ink);
 }
 

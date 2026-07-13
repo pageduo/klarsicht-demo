@@ -34,12 +34,12 @@ export default function KarrierePage() {
                     </p>
                   </div>
                   <div className="flex shrink-0 items-center gap-4">
-                    <span className="eyebrow rounded-full bg-cyan/15 px-3 py-1.5 text-cyan-dark">
+                    <span className="eyebrow rounded-full bg-gold/15 px-3 py-1.5 text-gold-dark">
                       {job.type}
                     </span>
                     <a
                       href={`mailto:${company.email}?subject=Bewerbung: ${encodeURIComponent(job.title)}`}
-                      className="text-sm font-semibold text-cyan-dark hover:text-ink"
+                      className="text-sm font-semibold text-gold-dark hover:text-ink"
                     >
                       Bewerben →
                     </a>
@@ -57,7 +57,7 @@ export default function KarrierePage() {
             </p>
             <a
               href={`mailto:${company.email}?subject=Initiativbewerbung`}
-              className="mt-6 inline-flex rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-ink transition hover:bg-cyan-light"
+              className="mt-6 inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition hover:bg-gold-light"
             >
               Initiativ bewerben
             </a>

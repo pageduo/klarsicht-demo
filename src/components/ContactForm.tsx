@@ -30,24 +30,24 @@ export default function ContactForm() {
           required
           type="text"
           placeholder="Name"
-          className="rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper placeholder:text-paper/40 focus:border-cyan focus:outline-none"
+          className="rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper placeholder:text-paper/40 focus:border-gold focus:outline-none"
         />
         <input
           required
           type="email"
           placeholder="E-Mail"
-          className="rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper placeholder:text-paper/40 focus:border-cyan focus:outline-none"
+          className="rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper placeholder:text-paper/40 focus:border-gold focus:outline-none"
         />
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <input
           type="tel"
           placeholder="Telefon (optional)"
-          className="rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper placeholder:text-paper/40 focus:border-cyan focus:outline-none"
+          className="rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper placeholder:text-paper/40 focus:border-gold focus:outline-none"
         />
         <select
           defaultValue=""
-          className="rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper focus:border-cyan focus:outline-none"
+          className="rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper focus:border-gold focus:outline-none"
         >
           <option value="" disabled className="text-ink">
             Anliegen wählen
@@ -62,10 +62,10 @@ export default function ContactForm() {
         required
         placeholder="Ihre Nachricht (z. B. Unternehmensgröße, Anliegen, Zeitrahmen)"
         rows={4}
-        className="resize-none rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper placeholder:text-paper/40 focus:border-cyan focus:outline-none"
+        className="resize-none rounded-xl border border-paper/15 bg-transparent px-4 py-3 text-sm text-paper placeholder:text-paper/40 focus:border-gold focus:outline-none"
       />
       <label className="flex items-start gap-3 text-xs leading-relaxed text-paper/60">
-        <input required type="checkbox" className="mt-0.5 h-4 w-4 accent-cyan" />
+        <input required type="checkbox" className="mt-0.5 h-4 w-4 accent-gold" />
         <span>
           Ich habe die{" "}
           <Link href="/datenschutz" className="underline underline-offset-2">
@@ -77,7 +77,7 @@ export default function ContactForm() {
       </label>
       <button
         type="submit"
-        className="mt-2 rounded-full bg-cyan px-6 py-3.5 text-sm font-semibold text-ink transition hover:bg-cyan-light"
+        className="mt-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-ink transition hover:bg-gold-light"
       >
         Nachricht senden
       </button>

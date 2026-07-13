@@ -6,7 +6,7 @@ export default function Testimonials() {
     <section className="bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
-          <p className="eyebrow text-cyan-dark">{"// Stimmen von Mandant:innen"}</p>
+          <p className="eyebrow text-gold-dark">{"// Stimmen von Mandant:innen"}</p>
           <h2 className="mt-4 max-w-xl font-display text-3xl font-normal text-ink sm:text-5xl">
             Vertrauen, das über die Buchhaltung hinausgeht.
           </h2>

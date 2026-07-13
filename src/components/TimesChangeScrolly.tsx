@@ -67,7 +67,7 @@ export default function TimesChangeScrolly() {
 
           <div className="absolute inset-0 flex flex-col justify-end px-5 pb-20 sm:px-8 sm:pb-28">
             <div className="mx-auto w-full max-w-3xl">
-              <p className="eyebrow text-cyan-light">{"// Die Steuerwelt im Wandel"}</p>
+              <p className="eyebrow text-gold-light">{"// Die Steuerwelt im Wandel"}</p>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={stage.time}
@@ -90,7 +90,7 @@ export default function TimesChangeScrolly() {
                   <span
                     key={s.time}
                     className={`h-1 flex-1 rounded-full transition-colors duration-500 ${
-                      i <= active ? "bg-cyan" : "bg-paper/20"
+                      i <= active ? "bg-gold" : "bg-paper/20"
                     }`}
                   />
                 ))}

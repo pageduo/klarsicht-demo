@@ -58,6 +58,8 @@ export const services = [
     description:
       "Laufende Finanzbuchhaltung, Jahresabschlüsse und Steuererklärungen für Kapital- und Personengesellschaften, angebunden an DATEV, Lexoffice oder sevDesk — je nachdem, was in Ihrem Unternehmen bereits läuft.",
     icon: "doc",
+    stat: { value: "180+", label: "betreute Gesellschaften" },
+    tags: ["GmbH & Co. KG", "Kapitalgesellschaften", "DATEV"],
   },
   {
     key: "wirtschaftspruefung",
@@ -66,6 +68,8 @@ export const services = [
     description:
       "Gesetzliche und freiwillige Abschlussprüfungen nach HGB und IFRS, Sonderprüfungen und prüfungsnahe Beratung — mit einem Prüfungsteam, das organisatorisch getrennt von der laufenden Steuerberatung arbeitet.",
     icon: "scale",
+    stat: { value: "60+", label: "Abschlussprüfungen p. a." },
+    tags: ["HGB", "IFRS", "Pflichtprüfung"],
   },
   {
     key: "privatpersonen",
@@ -74,6 +78,8 @@ export const services = [
     description:
       "Einkommensteuererklärungen, Beratung zu vermieteten Immobilien, Kapitalerträgen und Vermögensstrukturierung für Privatpersonen mit komplexeren steuerlichen Sachverhalten.",
     icon: "coin",
+    stat: { value: "230+", label: "private Mandate" },
+    tags: ["Vermietung", "Kapitalerträge", "Vermögensstruktur"],
   },
   {
     key: "unternehmensberatung",
@@ -82,6 +88,8 @@ export const services = [
     description:
       "Liquiditätsplanung, betriebswirtschaftliches Reporting und Digitalisierung der Finanzprozesse — von der ersten Excel-Tabelle bis zum monatlichen Management-Report.",
     icon: "chart",
+    stat: { value: "40+", label: "digitalisierte Prozesse" },
+    tags: ["Reporting", "Liquiditätsplanung", "Digitalisierung"],
   },
   {
     key: "gruendung",
@@ -90,6 +98,8 @@ export const services = [
     description:
       "Beratung bei Rechtsformwahl und Gründung, laufende Betreuung durch Finanzierungsrunden und steuerliche Begleitung bei Cap-Table- und ESOP-Themen für wachsende Start-ups.",
     icon: "spark",
+    stat: { value: "50+", label: "begleitete Gründungen" },
+    tags: ["Rechtsformwahl", "Finanzierungsrunden", "ESOP"],
   },
   {
     key: "nachfolge",
@@ -98,6 +108,8 @@ export const services = [
     description:
       "Steuerlich und menschlich sensible Begleitung von Unternehmensnachfolgen sowie Beratung zu Erbschaft- und Schenkungsteuer, oft über mehrere Generationen hinweg geplant.",
     icon: "handshake",
+    stat: { value: "25+", label: "begleitete Nachfolgen" },
+    tags: ["Erbschaftsteuer", "Schenkungsteuer", "Generationswechsel"],
   },
 ] as const;
 
@@ -420,4 +432,4 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-export const defaultAccent = "#16BFAE";
+export const defaultAccent = "#B3893C";

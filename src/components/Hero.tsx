@@ -24,11 +24,11 @@ export default function Hero() {
 
       <div className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col justify-end px-5 pb-20 pt-40 sm:px-8 sm:pb-28">
         <Reveal>
-          <p className="eyebrow text-cyan-light">{"// Steuerberatung & Wirtschaftsprüfung Hamburg"}</p>
+          <p className="eyebrow text-gold-light">{"// Steuerberatung & Wirtschaftsprüfung Hamburg"}</p>
           <h1 className="mt-5 max-w-3xl font-display text-4xl font-normal leading-[1.05] text-paper sm:text-6xl lg:text-7xl">
             {company.claim}
             <br />
-            <span className="italic text-cyan-light">{company.claimSecondLine}</span>
+            <span className="italic text-gold-light">{company.claimSecondLine}</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-paper/75 sm:text-lg">
             {company.subline}
@@ -37,7 +37,7 @@ export default function Hero() {
             <Link
               href="/kontakt"
               data-cursor="Erstgespräch →"
-              className="rounded-full bg-cyan px-7 py-3.5 text-sm font-semibold text-ink transition hover:bg-cyan-light"
+              className="rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-ink transition hover:bg-gold-light"
             >
               Erstgespräch vereinbaren
             </Link>

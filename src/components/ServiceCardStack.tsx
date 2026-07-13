@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { services } from "@/lib/content";
 
 const iconPaths: Record<string, string> = {
@@ -15,55 +15,57 @@ const iconPaths: Record<string, string> = {
     "m2 12 4-4 4 2 3-3 3 3 4-2 4 4M6 14l3 3a2 2 0 0 0 3-3M12 14l2 2a2 2 0 0 0 3-3l-3-3",
 };
 
+// Fein gerastertes "Ledger"-Muster als Kartenhintergrund — eine dezente
+// Anspielung auf klassisches Buchhaltungspapier statt einer reinen Flächenfarbe.
+const ledgerPattern: React.CSSProperties = {
+  backgroundImage:
+    "repeating-linear-gradient(to bottom, transparent, transparent 27px, rgba(11,20,32,0.05) 28px)",
+};
+
 function Card({
   index,
+  active,
   total,
-  scrollYProgress,
   service,
 }: {
   index: number;
+  active: number;
   total: number;
-  scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
   service: (typeof services)[number];
 }) {
-  const start = index / total;
-  const end = (index + 1) / total;
-  const isFirst = index === 0;
-  const isLast = index === total - 1;
-  // Kleiner Anteil des eigenen Fensters, in dem ein- bzw. ausgeblendet wird —
-  // so überschneiden sich nie zwei Karten gleichzeitig lesbar. Die erste Karte
-  // braucht kein Einblenden (sie ist von Anfang an sichtbar), die letzte kein
-  // Ausblenden (sie bleibt am Ende einfach stehen) — offsets müssen für Framer
-  // Motions WAAPI-Pfad strikt innerhalb [0, 1] und streng monoton bleiben.
-  const fade = 0.4 / total;
+  const diff = index - active;
+  const isFront = diff === 0;
+  const isUpcoming = diff > 0 && diff <= 3;
+  const isPast = diff < 0;
 
-  const y = useTransform(
-    scrollYProgress,
-    isFirst ? [0, 1] : [start - fade, start],
-    isFirst ? [0, 0] : [48, 0]
-  );
-  const scale = useTransform(
-    scrollYProgress,
-    isLast ? [0, 1] : [end, end + fade],
-    isLast ? [1, 1] : [1, 0.9]
-  );
-  const opacity = useTransform(
-    scrollYProgress,
-    isFirst ? [end, end + fade] : isLast ? [start - fade, start] : [start - fade, start, end, end + fade],
-    isFirst ? [1, 0] : isLast ? [0, 1] : [0, 1, 1, 0]
-  );
+  const target = isFront
+    ? { scale: 1, y: 0, opacity: 1 }
+    : isUpcoming
+      ? { scale: 1 - diff * 0.035, y: -diff * 18, opacity: 0.82 - diff * 0.2 }
+      : isPast
+        ? { scale: 0.94, y: 36, opacity: 0 }
+        : { scale: 0.86, y: -70, opacity: 0 };
 
   return (
     <motion.div
-      style={{ y, scale, opacity, zIndex: index }}
-      className="absolute inset-0 flex flex-col justify-between rounded-[2rem] border border-ink/10 bg-paper p-8 shadow-[0_30px_60px_-25px_rgba(11,20,32,0.35)] sm:p-12"
+      animate={target}
+      initial={false}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      style={{ zIndex: isFront ? 50 : 50 - Math.abs(diff), pointerEvents: isFront ? "auto" : "none" }}
+      className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-[1.75rem] border border-ink/10 bg-paper p-7 shadow-[0_35px_70px_-30px_rgba(11,20,32,0.4)] sm:p-10"
+      aria-hidden={!isFront}
     >
-      <div className="flex items-start justify-between">
+      <div style={ledgerPattern} className="pointer-events-none absolute inset-0" />
+      <span className="pointer-events-none absolute -bottom-10 -right-4 select-none font-display text-[11rem] leading-none text-ink/[0.04] sm:text-[13rem]">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+
+      <div className="relative flex items-start justify-between">
         <span className="eyebrow text-stone">
           0{index + 1} / 0{total}
         </span>
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan/15 text-cyan-dark">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <span className="flex h-14 w-14 items-center justify-center rounded-xl border border-gold/30 bg-gold/10 text-gold-dark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path
               d={iconPaths[service.icon]}
               stroke="currentColor"
@@ -76,36 +78,62 @@ function Card({
         </span>
       </div>
 
-      <div>
+      <div className="relative">
         <h3 className="font-display text-2xl font-normal text-ink sm:text-4xl">{service.title}</h3>
         <p className="mt-4 max-w-xl text-sm leading-relaxed text-stone sm:text-base">
           {service.description}
         </p>
-        <Link
-          href="/leistungen"
-          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-dark hover:text-ink"
-        >
-          Mehr erfahren <span aria-hidden>→</span>
-        </Link>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {service.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-ink/12 px-3 py-1 font-mono text-[10px] uppercase tracking-wide text-stone"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-6 flex items-end justify-between border-t border-ink/10 pt-5">
+          <div>
+            <p className="font-mono text-xl font-medium text-ink sm:text-2xl">{service.stat.value}</p>
+            <p className="text-xs text-stone">{service.stat.label}</p>
+          </div>
+          <Link
+            href="/leistungen"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-gold-dark hover:text-ink"
+          >
+            Mehr erfahren <span aria-hidden>→</span>
+          </Link>
+        </div>
       </div>
     </motion.div>
   );
 }
 
-// Gepinntes "Karteikarten"-Scrollytelling: Leistungs-Karten liegen gestapelt
-// im Bildschirm, jede neue Karte schiebt sich beim Scrollen nach vorn,
-// während die vorherige zurück und ein Stück nach hinten skaliert wird.
+// Gepinntes "Karteikarten"-Scrollytelling: Leistungs-Karten liegen als
+// gestapeltes Deck im Bildschirm. Der Scroll-Fortschritt bestimmt einen
+// diskreten "aktiven Index" (statt jede Karte einzeln an den Scroll zu
+// koppeln) — die kommenden Karten peeken sichtbar hinter der aktiven hervor,
+// bereits gezeigte schieben sich sanft nach hinten weg.
 export default function ServiceCardStack() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
+  useMotionValueEvent(scrollYProgress, "change", (value) => {
+    const index = Math.min(services.length - 1, Math.max(0, Math.floor(value * services.length)));
+    setActive(index);
+  });
+
   return (
     <section className="bg-mist">
       <div className="mx-auto max-w-7xl px-5 pt-20 sm:px-8">
-        <p className="eyebrow text-cyan-dark">{"// Leistungen"}</p>
+        <p className="eyebrow text-gold-dark">{"// Leistungen"}</p>
         <h2 className="mt-4 max-w-xl font-display text-3xl font-normal text-ink sm:text-5xl">
           Sechs Leistungsfelder, eine Kanzlei.
         </h2>
@@ -116,15 +144,9 @@ export default function ServiceCardStack() {
         className="relative"
       >
         <div className="sticky top-0 flex h-screen items-center px-5 py-16 sm:px-8">
-          <div className="relative mx-auto h-[60vh] w-full max-w-3xl">
+          <div className="relative mx-auto h-[64vh] w-full max-w-3xl">
             {services.map((service, i) => (
-              <Card
-                key={service.key}
-                index={i}
-                total={services.length}
-                scrollYProgress={scrollYProgress}
-                service={service}
-              />
+              <Card key={service.key} index={i} active={active} total={services.length} service={service} />
             ))}
           </div>
         </div>

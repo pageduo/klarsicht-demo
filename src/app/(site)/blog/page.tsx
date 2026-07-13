@@ -5,6 +5,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { blogPosts } from "@/lib/content";
 import { img } from "@/lib/images";
+import { videos } from "@/lib/videos";
 
 export const metadata: Metadata = {
   title: "Blog — KLARSICHT Demo",
@@ -27,6 +28,7 @@ export default function BlogPage() {
         subline="Einordnungen zu Gesetzesänderungen, Digitalisierung und Beratungspraxis — kompakt und ohne Paragrafen-Wüste."
         image={img.pageHero.blog}
         imageAlt="Kursverlauf auf einem dunklen Bildschirm"
+        video={videos.blogHero}
       />
 
       <section className="bg-paper py-16 sm:py-24">
@@ -44,8 +46,8 @@ export default function BlogPage() {
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                     />
                   </div>
-                  <p className="mt-5 eyebrow text-cyan-dark">{post.category}</p>
-                  <h3 className="mt-2 font-display text-xl font-normal text-ink transition-colors group-hover:text-cyan-dark">
+                  <p className="mt-5 eyebrow text-gold-dark">{post.category}</p>
+                  <h3 className="mt-2 font-display text-xl font-normal text-ink transition-colors group-hover:text-gold-dark">
                     {post.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-stone">{post.excerpt}</p>
