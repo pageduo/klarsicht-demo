@@ -19,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
-  return { title: post ? `${post.title} — KLARSICHT Demo` : "Artikel — KLARSICHT Demo" };
+  return { title: post ? `${post.title} | KLARSICHT Demo` : "Artikel | KLARSICHT Demo" };
 }
 
 function formatDate(date: string) {

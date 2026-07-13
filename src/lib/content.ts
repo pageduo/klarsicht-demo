@@ -6,9 +6,9 @@ export const company = {
   claim: "Zahlen mit Klarheit.",
   claimSecondLine: "Beratung mit Weitblick.",
   subline:
-    "Eine Hamburger Kanzlei für Steuerberatung, Wirtschaftsprüfung und Unternehmensberatung — digital, direkt und ohne Aktenstaub.",
+    "Eine Hamburger Kanzlei für Steuerberatung, Wirtschaftsprüfung und Unternehmensberatung, digital, direkt und ohne Aktenstaub.",
   usp:
-    "Wir verbinden Steuerberatung und Wirtschaftsprüfung unter einem Dach — mit einem Mandantenportal statt Papierstapeln und Beraterinnen und Beratern, die in Szenarien denken statt nur in Paragrafen.",
+    "Wir verbinden Steuerberatung und Wirtschaftsprüfung unter einem Dach, mit einem Mandantenportal statt Papierstapeln und Beraterinnen und Beratern, die in Szenarien denken statt nur in Paragrafen.",
   phone: "+49 40 2288 4170",
   phoneHref: "tel:+494022884170",
   email: "mandat@klarsicht-demo.de",
@@ -54,9 +54,9 @@ export const services = [
   {
     key: "steuerberatung-unternehmen",
     title: "Steuerberatung für Unternehmen",
-    short: "Laufende Buchhaltung, Jahresabschlüsse und Steuererklärungen — digital vorbereitet.",
+    short: "Laufende Buchhaltung, Jahresabschlüsse und Steuererklärungen, digital vorbereitet.",
     description:
-      "Laufende Finanzbuchhaltung, Jahresabschlüsse und Steuererklärungen für Kapital- und Personengesellschaften, angebunden an DATEV, Lexoffice oder sevDesk — je nachdem, was in Ihrem Unternehmen bereits läuft.",
+      "Laufende Finanzbuchhaltung, Jahresabschlüsse und Steuererklärungen für Kapital- und Personengesellschaften, angebunden an DATEV, Lexoffice oder sevDesk, je nachdem, was in Ihrem Unternehmen bereits läuft.",
     icon: "doc",
     stat: { value: "180+", label: "betreute Gesellschaften" },
     tags: ["GmbH & Co. KG", "Kapitalgesellschaften", "DATEV"],
@@ -66,7 +66,7 @@ export const services = [
     title: "Wirtschaftsprüfung & Jahresabschlussprüfung",
     short: "Gesetzliche und freiwillige Prüfungen nach HGB und IFRS.",
     description:
-      "Gesetzliche und freiwillige Abschlussprüfungen nach HGB und IFRS, Sonderprüfungen und prüfungsnahe Beratung — mit einem Prüfungsteam, das organisatorisch getrennt von der laufenden Steuerberatung arbeitet.",
+      "Gesetzliche und freiwillige Abschlussprüfungen nach HGB und IFRS, Sonderprüfungen und prüfungsnahe Beratung, mit einem Prüfungsteam, das organisatorisch getrennt von der laufenden Steuerberatung arbeitet.",
     icon: "scale",
     stat: { value: "60+", label: "Abschlussprüfungen p. a." },
     tags: ["HGB", "IFRS", "Pflichtprüfung"],
@@ -86,7 +86,7 @@ export const services = [
     title: "Unternehmensberatung & Controlling",
     short: "Liquiditätsplanung, Reporting und digitale Finanzprozesse.",
     description:
-      "Liquiditätsplanung, betriebswirtschaftliches Reporting und Digitalisierung der Finanzprozesse — von der ersten Excel-Tabelle bis zum monatlichen Management-Report.",
+      "Liquiditätsplanung, betriebswirtschaftliches Reporting und Digitalisierung der Finanzprozesse, von der ersten Excel-Tabelle bis zum monatlichen Management-Report.",
     icon: "chart",
     stat: { value: "40+", label: "digitalisierte Prozesse" },
     tags: ["Reporting", "Liquiditätsplanung", "Digitalisierung"],
@@ -118,7 +118,7 @@ export const processSteps = [
     number: "01",
     title: "Erstgespräch",
     description:
-      "30 Minuten, kostenfrei und unverbindlich: Wir hören uns Ihren Status quo und Ihr Zielbild an — persönlich in Hamburg oder per Videocall.",
+      "30 Minuten, kostenfrei und unverbindlich: Wir hören uns Ihren Status quo und Ihr Zielbild an, persönlich in Hamburg oder per Videocall.",
   },
   {
     number: "02",
@@ -130,7 +130,7 @@ export const processSteps = [
     number: "03",
     title: "Digitale Aufnahme",
     description:
-      "Anbindung an unser Mandantenportal und Ihre bestehende Buchhaltungssoftware — DATEV, Lexoffice oder sevDesk, ganz ohne Aktenordner.",
+      "Anbindung an unser Mandantenportal und Ihre bestehende Buchhaltungssoftware: DATEV, Lexoffice oder sevDesk, ganz ohne Aktenordner.",
   },
   {
     number: "04",
@@ -154,7 +154,7 @@ export const timesChangeStages = [
     time: "0:00",
     title: "Die Steuerwelt verändert sich schneller als je zuvor.",
     description:
-      "E-Rechnungspflicht, neue Meldefristen, sich jährlich ändernde Abschreibungsregeln — was gestern galt, ist heute schon wieder Geschichte.",
+      "E-Rechnungspflicht, neue Meldefristen, sich jährlich ändernde Abschreibungsregeln: was gestern galt, ist heute schon wieder Geschichte.",
   },
   {
     time: "0:07",
@@ -166,11 +166,11 @@ export const timesChangeStages = [
     time: "0:14",
     title: "Neue Gesetze bedeuten auch neue Chancen.",
     description:
-      "Förderprogramme, Abschreibungsmodelle und Strukturierungsoptionen entstehen so schnell, wie alte verschwinden — wer sie kennt, ist im Vorteil.",
+      "Förderprogramme, Abschreibungsmodelle und Strukturierungsoptionen entstehen so schnell, wie alte verschwinden. Wer sie kennt, ist im Vorteil.",
   },
   {
     time: "0:21",
-    title: "Wir behalten den Überblick — für Sie.",
+    title: "Wir behalten den Überblick, für Sie.",
     description:
       "Damit Sie sich auf Ihr Unternehmen konzentrieren können, während wir uns um die Zahlen und ihre Bedeutung kümmern.",
   },
@@ -185,12 +185,12 @@ export const industries = [
   {
     key: "startups",
     label: "Start-ups & Gründer:innen",
-    description: "Von der Seed-Runde bis zur Series A — steuerlich sattelfest wachsen.",
+    description: "Von der Seed-Runde bis zur Series A: steuerlich sattelfest wachsen.",
   },
   {
     key: "freiberufler",
     label: "Freiberufler:innen & Kanzleien",
-    description: "Ärzt:innen, Architekt:innen, Kanzleien — Beratung, die die Branche kennt.",
+    description: "Ärzt:innen, Architekt:innen, Kanzleien: Beratung, die die Branche kennt.",
   },
   {
     key: "immobilien",
@@ -228,7 +228,7 @@ export const team = [
     key: "lene",
     name: "Lene Ohlsen",
     role: "Steuerberaterin, Vermögensnachfolge",
-    bio: "Begleitet Unternehmer:innen und Familien bei Nachfolge-, Erbschaft- und Schenkungsteuerfragen — mit Feingefühl für sensible Themen.",
+    bio: "Begleitet Unternehmer:innen und Familien bei Nachfolge-, Erbschaft- und Schenkungsteuerfragen, mit Feingefühl für sensible Themen.",
     cursorShape: "handshake",
   },
   {
@@ -269,7 +269,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Unsere Nachfolge war ein sensibles Thema — KLARSICHT hat uns menschlich und fachlich sicher durch den Prozess geführt.",
+      "Unsere Nachfolge war ein sensibles Thema. KLARSICHT hat uns menschlich und fachlich sicher durch den Prozess geführt.",
     name: "Inhaberfamilie",
     context: "Familienunternehmen in dritter Generation",
   },
@@ -279,17 +279,17 @@ export const faqs = [
   {
     question: "Ab wann lohnt sich ein Wechsel zu einer neuen Kanzlei?",
     answer:
-      "Praktisch jederzeit — ein Kanzleiwechsel ist auch unterjährig unkompliziert möglich. Wir übernehmen die Abstimmung mit Ihrer bisherigen Steuerberatung und sorgen für einen lückenlosen Übergang der laufenden Fristen.",
+      "Praktisch jederzeit: Ein Kanzleiwechsel ist auch unterjährig unkompliziert möglich. Wir übernehmen die Abstimmung mit Ihrer bisherigen Steuerberatung und sorgen für einen lückenlosen Übergang der laufenden Fristen.",
   },
   {
     question: "Arbeiten Sie mit DATEV oder auch mit Lexoffice und sevDesk?",
     answer:
-      "Beides. Wir sind DATEV-Kanzlei, betreuen aber ebenso Mandant:innen, die bereits mit Lexoffice, sevDesk oder einer anderen Cloud-Buchhaltung arbeiten — wichtig ist uns die digitale Anbindung, nicht das konkrete Tool.",
+      "Beides. Wir sind DATEV-Kanzlei, betreuen aber ebenso Mandant:innen, die bereits mit Lexoffice, sevDesk oder einer anderen Cloud-Buchhaltung arbeiten. Wichtig ist uns die digitale Anbindung, nicht das konkrete Tool.",
   },
   {
     question: "Übernehmen Sie Prüfung und laufende Beratung gleichzeitig?",
     answer:
-      "Bei gesetzlichen Pflichtprüfungen sind Prüfungs- und Beratungsteam aus Unabhängigkeitsgründen strikt getrennt organisiert. Bei freiwilligen Prüfungen sind kombinierte Mandate möglich — wir klären das transparent im Erstgespräch.",
+      "Bei gesetzlichen Pflichtprüfungen sind Prüfungs- und Beratungsteam aus Unabhängigkeitsgründen strikt getrennt organisiert. Bei freiwilligen Prüfungen sind kombinierte Mandate möglich, wir klären das transparent im Erstgespräch.",
   },
   {
     question: "Wie schnell bekomme ich einen Termin für ein Erstgespräch?",
@@ -355,9 +355,9 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Zwischen degressiver Abschreibung, erweiterten Verlustverrechnungen und neuen Schwellenwerten: ein Überblick über die Änderungen, die tatsächlich Kasseneffekte haben.",
     body: [
-      "Das Wachstumschancengesetz bringt seit seiner stufenweisen Einführung eine Reihe von Änderungen mit sich, die für Unternehmen jeder Größe relevant sind — von der degressiven Abschreibung für bewegliche Wirtschaftsgüter bis zur erweiterten Verlustverrechnung.",
+      "Das Wachstumschancengesetz bringt seit seiner stufenweisen Einführung eine Reihe von Änderungen mit sich, die für Unternehmen jeder Größe relevant sind: von der degressiven Abschreibung für bewegliche Wirtschaftsgüter bis zur erweiterten Verlustverrechnung.",
       "Für den Mittelstand besonders relevant: die angepassten Schwellenwerte bei der Ist-Besteuerung und die erweiterten Möglichkeiten bei der Sonderabschreibung für kleine und mittlere Unternehmen. Wer investiert, sollte den Zeitpunkt genau planen.",
-      "Unser Rat: Prüfen Sie gemeinsam mit Ihrer Steuerberatung, welche Investitionen sich in diesem und im kommenden Jahr steuerlich unterschiedlich auswirken — die Reihenfolge kann einen spürbaren Unterschied machen.",
+      "Unser Rat: Prüfen Sie gemeinsam mit Ihrer Steuerberatung, welche Investitionen sich in diesem und im kommenden Jahr steuerlich unterschiedlich auswirken. Die Reihenfolge kann einen spürbaren Unterschied machen.",
     ],
   },
   {
@@ -371,7 +371,7 @@ export const blogPosts: BlogPost[] = [
     body: [
       "Seit Einführung der verpflichtenden E-Rechnung im B2B-Bereich gelten gestaffelte Übergangsfristen, abhängig von der Unternehmensgröße. Wer noch keine geeignete Softwarelösung im Einsatz hat, sollte jetzt handeln, statt auf den letzten Stichtag zu warten.",
       "Wichtig zu wissen: E-Rechnung bedeutet nicht PDF per E-Mail, sondern ein strukturiertes, maschinenlesbares Format wie XRechnung oder ZUGFeRD. Die Umstellung betrifft sowohl den Rechnungsversand als auch den -empfang.",
-      "Wir unterstützen unsere Mandant:innen bei der Auswahl und Anbindung einer passenden Lösung — meist lässt sich das direkt mit der ohnehin laufenden Digitalisierung der Buchhaltung verbinden.",
+      "Wir unterstützen unsere Mandant:innen bei der Auswahl und Anbindung einer passenden Lösung, meist lässt sich das direkt mit der ohnehin laufenden Digitalisierung der Buchhaltung verbinden.",
     ],
   },
   {
@@ -384,7 +384,7 @@ export const blogPosts: BlogPost[] = [
       "Belegchaos, E-Mail-Pingpong, verlorene Anhänge: Wie ein zentrales Mandantenportal den Weg zum fertigen Jahresabschluss spürbar verkürzt.",
     body: [
       "Der klassische Weg zum Jahresabschluss ist oft von Wartezeiten geprägt: fehlende Belege, unklare Rückfragen per E-Mail, Abstimmungen, die sich über Wochen ziehen. Ein zentrales Mandantenportal löst genau diese Reibungspunkte.",
-      "In unserem Portal sehen Mandant:innen jederzeit den Bearbeitungsstand, laden Belege direkt hoch und beantworten Rückfragen an einem Ort — ohne dass etwas in Postfächern untergeht.",
+      "In unserem Portal sehen Mandant:innen jederzeit den Bearbeitungsstand, laden Belege direkt hoch und beantworten Rückfragen an einem Ort, ohne dass etwas in Postfächern untergeht.",
       "Das Ergebnis in der Praxis: Jahresabschlüsse, die früher im Schnitt bis in den Sommer dauerten, liegen heute für die meisten unserer Mandate deutlich früher vor.",
     ],
   },
@@ -395,11 +395,11 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-11",
     readTime: "7 Min. Lesezeit",
     excerpt:
-      "Vom falschen Übergabezeitpunkt bis zur unklaren Bewertung: Diese fünf Stolpersteine sehen wir in Nachfolgeprozessen immer wieder — und wie man sie vermeidet.",
+      "Vom falschen Übergabezeitpunkt bis zur unklaren Bewertung: Diese fünf Stolpersteine sehen wir in Nachfolgeprozessen immer wieder, und wie man sie vermeidet.",
     body: [
       "Unternehmensnachfolgen scheitern selten an der grundsätzlichen Bereitschaft zur Übergabe, sondern an handwerklichen Fehlern in der steuerlichen und rechtlichen Vorbereitung.",
       "Der häufigste Fehler: Der Übergabezeitpunkt wird nicht mit der Unternehmensbewertung und den geltenden Verschonungsregeln der Erbschaftsteuer abgestimmt. Auch eine unklare Trennung von Privat- und Betriebsvermögen führt regelmäßig zu unnötigen Steuerlasten.",
-      "Wer frühzeitig — im Idealfall drei bis fünf Jahre vor der geplanten Übergabe — mit der Planung beginnt, hat deutlich mehr Gestaltungsspielraum als bei einer kurzfristig angestoßenen Nachfolge.",
+      "Wer frühzeitig (im Idealfall drei bis fünf Jahre vor der geplanten Übergabe) mit der Planung beginnt, hat deutlich mehr Gestaltungsspielraum als bei einer kurzfristig angestoßenen Nachfolge.",
     ],
   },
   {
@@ -409,11 +409,11 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-22",
     readTime: "4 Min. Lesezeit",
     excerpt:
-      "Angepasste Pauschbeträge und neue Nachweispflichten bei Reisekosten — ein kompakter Überblick für Arbeitgeber:innen und Angestellte.",
+      "Angepasste Pauschbeträge und neue Nachweispflichten bei Reisekosten: ein kompakter Überblick für Arbeitgeber:innen und Angestellte.",
     body: [
       "Die Homeoffice-Pauschale und die Verpflegungsmehraufwendungen bei Dienstreisen werden regelmäßig angepasst. Für Arbeitgeber:innen lohnt sich ein Blick auf die aktuellen Pauschbeträge, bevor die Lohnabrechnung für das neue Jahr aufgesetzt wird.",
       "Bei Reisekosten gilt weiterhin: Ohne saubere Belege und eine nachvollziehbare Reisekostenabrechnung drohen bei einer Betriebsprüfung Rückfragen. Digitale Reisekosten-Tools helfen, das Belegchaos von vornherein zu vermeiden.",
-      "Wir empfehlen, die eigenen Reisekostenrichtlinien einmal jährlich mit der aktuellen Rechtslage abzugleichen — das dauert meist nur ein kurzes Gespräch.",
+      "Wir empfehlen, die eigenen Reisekostenrichtlinien einmal jährlich mit der aktuellen Rechtslage abzugleichen, das dauert meist nur ein kurzes Gespräch.",
     ],
   },
   {
@@ -425,9 +425,9 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Nachhaltigkeitsberichterstattung ist längst nicht mehr nur ein Thema für Konzerne. Wir ordnen ein, ab welcher Größenordnung eine externe Prüfung relevant wird.",
     body: [
-      "Mit der schrittweisen Ausweitung der Nachhaltigkeitsberichtspflichten rücken auch mittelständische Unternehmen zunehmend in den Anwendungsbereich — sei es direkt oder als Zulieferer größerer, bereits berichtspflichtiger Unternehmen.",
-      "Eine externe Prüfung der Nachhaltigkeitsberichterstattung stellt sicher, dass die Angaben nicht nur intern plausibel, sondern auch extern belastbar sind — ein Aspekt, der zunehmend auch bei Finanzierungsgesprächen eine Rolle spielt.",
-      "Unser Rat: Auch wenn Ihr Unternehmen aktuell noch nicht berichtspflichtig ist, lohnt sich ein früher Blick auf die relevanten Kennzahlen — die Anforderungen kommen erfahrungsgemäß schneller, als viele erwarten.",
+      "Mit der schrittweisen Ausweitung der Nachhaltigkeitsberichtspflichten rücken auch mittelständische Unternehmen zunehmend in den Anwendungsbereich, sei es direkt oder als Zulieferer größerer, bereits berichtspflichtiger Unternehmen.",
+      "Eine externe Prüfung der Nachhaltigkeitsberichterstattung stellt sicher, dass die Angaben nicht nur intern plausibel, sondern auch extern belastbar sind. Ein Aspekt, der zunehmend auch bei Finanzierungsgesprächen eine Rolle spielt.",
+      "Unser Rat: Auch wenn Ihr Unternehmen aktuell noch nicht berichtspflichtig ist, lohnt sich ein früher Blick auf die relevanten Kennzahlen. Die Anforderungen kommen erfahrungsgemäß schneller, als viele erwarten.",
     ],
   },
 ];

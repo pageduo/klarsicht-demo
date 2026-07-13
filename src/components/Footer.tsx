@@ -83,7 +83,7 @@ export default function Footer() {
           <p>
             © {year} {company.fullName}
           </p>
-          <p>Demo-Vorlage für Akquisezwecke — kein echtes Unternehmen, keine echte Rechts- oder Steuerberatung.</p>
+          <p>Demo-Vorlage für Akquisezwecke, kein echtes Unternehmen, keine echte Rechts- oder Steuerberatung.</p>
           <a href="/api/auth/logout" className="hover:text-paper/70">
             Abmelden
           </a>

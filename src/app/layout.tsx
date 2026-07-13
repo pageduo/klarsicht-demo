@@ -21,7 +21,7 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-const title = "KLARSICHT Steuerberatung & Wirtschaftsprüfung — Hamburg | Demo-Website";
+const title = "KLARSICHT Steuerberatung & Wirtschaftsprüfung: Hamburg | Demo-Website";
 const description =
   "Demo-Website für eine moderne Steuerberatungs- und Wirtschaftsprüfungskanzlei in Hamburg: Steuerberatung, Jahresabschlussprüfung, Unternehmensberatung und Nachfolgeplanung. Diese Seite ist eine Agentur-Demo und kein echtes Unternehmen.";
 

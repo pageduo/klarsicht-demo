@@ -4,7 +4,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "FAQ — KLARSICHT Demo",
+  title: "FAQ | KLARSICHT Demo",
 };
 
 export default function FAQPage() {
@@ -18,7 +18,7 @@ export default function FAQPage() {
       </section>
       <CTABanner
         title="Ihre Frage war nicht dabei?"
-        description="Melden Sie sich direkt — im Erstgespräch klären wir alles Weitere."
+        description="Melden Sie sich direkt, im Erstgespräch klären wir alles Weitere."
       />
     </>
   );

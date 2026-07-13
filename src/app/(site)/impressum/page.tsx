@@ -3,7 +3,7 @@ import LegalHero from "@/components/LegalHero";
 import { company } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Impressum (Platzhalter) — KLARSICHT Demo",
+  title: "Impressum (Platzhalter) | KLARSICHT Demo",
 };
 
 export default function ImpressumPage() {
@@ -81,7 +81,7 @@ export default function ImpressumPage() {
             <h2 className="mb-3 font-display text-xl font-normal text-ink">Bildnachweise</h2>
             <p>
               Die auf dieser Demo-Website verwendeten Fotografien stammen von Unsplash-Fotograf:innen,
-              das Videomaterial von Pexels-Videograf:innen — beide im Rahmen der jeweiligen
+              das Videomaterial von Pexels-Videograf:innen, beide im Rahmen der jeweiligen
               kostenfreien Lizenz zu Demonstrationszwecken genutzt. Für eine echte Kanzleiseite sind
               eigene oder lizenzierte Aufnahmen zu verwenden.
             </p>

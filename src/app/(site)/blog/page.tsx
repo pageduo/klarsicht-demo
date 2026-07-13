@@ -8,7 +8,7 @@ import { img } from "@/lib/images";
 import { videos } from "@/lib/videos";
 
 export const metadata: Metadata = {
-  title: "Blog — KLARSICHT Demo",
+  title: "Blog | KLARSICHT Demo",
 };
 
 function formatDate(date: string) {
@@ -25,7 +25,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="// Blog"
         title="Neues aus der Steuerwelt."
-        subline="Einordnungen zu Gesetzesänderungen, Digitalisierung und Beratungspraxis — kompakt und ohne Paragrafen-Wüste."
+        subline="Einordnungen zu Gesetzesänderungen, Digitalisierung und Beratungspraxis, kompakt und ohne Paragrafen-Wüste."
         image={img.pageHero.blog}
         imageAlt="Kursverlauf auf einem dunklen Bildschirm"
         video={videos.blogHero}

@@ -8,7 +8,7 @@ import { team } from "@/lib/content";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Team — KLARSICHT Demo",
+  title: "Team | KLARSICHT Demo",
 };
 
 export default function TeamPage() {
@@ -52,7 +52,7 @@ export default function TeamPage() {
 
       <CTABanner
         title="Lernen Sie uns persönlich kennen."
-        description="Im Erstgespräch merken Sie schnell, ob die Chemie stimmt — genau wie im Team selbst."
+        description="Im Erstgespräch merken Sie schnell, ob die Chemie stimmt, genau wie im Team selbst."
       />
     </>
   );

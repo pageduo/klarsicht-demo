@@ -6,7 +6,7 @@ import { processSteps } from "@/lib/content";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Ablauf — KLARSICHT Demo",
+  title: "Ablauf | KLARSICHT Demo",
 };
 
 export default function AblaufPage() {
@@ -15,7 +15,7 @@ export default function AblaufPage() {
       <PageHero
         eyebrow="// Ablauf"
         title="Von der ersten Anfrage bis zur laufenden Betreuung."
-        subline="Fünf Schritte, transparent kommuniziert — ohne wochenlange Funkstille."
+        subline="Fünf Schritte, transparent kommuniziert, ohne wochenlange Funkstille."
         image={img.pageHero.ablauf}
         imageAlt="Team bespricht Unterlagen am Konferenztisch"
       />
@@ -44,7 +44,7 @@ export default function AblaufPage() {
 
       <CTABanner
         title="Starten wir mit einem Erstgespräch?"
-        description="30 Minuten, kostenfrei, unverbindlich — persönlich in Hamburg oder per Videocall."
+        description="30 Minuten, kostenfrei, unverbindlich: persönlich in Hamburg oder per Videocall."
       />
     </>
   );

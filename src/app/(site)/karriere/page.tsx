@@ -5,7 +5,7 @@ import { jobs, company } from "@/lib/content";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Karriere — KLARSICHT Demo",
+  title: "Karriere | KLARSICHT Demo",
 };
 
 export default function KarrierePage() {
@@ -14,7 +14,7 @@ export default function KarrierePage() {
       <PageHero
         eyebrow="// Karriere"
         title="Steuerberatung, wie sie sich anfühlen sollte."
-        subline="Digital, kollegial und ohne Aktenordner-Romantik — offene Stellen bei KLARSICHT."
+        subline="Digital, kollegial und ohne Aktenordner-Romantik: offene Stellen bei KLARSICHT."
         image={img.pageHero.karriere}
         imageAlt="Lichtdurchfluteter Büro-Flur bei KLARSICHT"
       />
@@ -52,7 +52,7 @@ export default function KarrierePage() {
           <Reveal delay={0.2} className="mt-14 rounded-3xl bg-slate p-8 text-center sm:p-12">
             <h3 className="font-display text-2xl font-normal text-paper">Keine passende Stelle dabei?</h3>
             <p className="mt-3 text-sm leading-relaxed text-paper/70">
-              Wir freuen uns auch über Initiativbewerbungen — schreiben Sie uns einfach kurz, wer
+              Wir freuen uns auch über Initiativbewerbungen, schreiben Sie uns einfach kurz, wer
               Sie sind und was Sie suchen.
             </p>
             <a

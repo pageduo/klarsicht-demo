@@ -7,7 +7,7 @@ import { services } from "@/lib/content";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Leistungen — KLARSICHT Demo",
+  title: "Leistungen | KLARSICHT Demo",
 };
 
 const iconPaths: Record<string, string> = {
@@ -26,7 +26,7 @@ export default function LeistungenPage() {
       <PageHero
         eyebrow="// Leistungen"
         title="Steuerberatung und Wirtschaftsprüfung, die zusammendenken."
-        subline="Sechs Leistungsfelder, ein Team — von der laufenden Buchhaltung bis zur Unternehmensnachfolge."
+        subline="Sechs Leistungsfelder, ein Team: von der laufenden Buchhaltung bis zur Unternehmensnachfolge."
         image={img.pageHero.leistungen}
         imageAlt="Glasfassade eines modernen Bürogebäudes von unten fotografiert"
       />
@@ -86,7 +86,7 @@ export default function LeistungenPage() {
 
       <CTABanner
         title="Welche Leistung passt zu Ihrem Unternehmen?"
-        description="Im kostenfreien Erstgespräch sortieren wir gemeinsam, was Sie wirklich brauchen — ganz ohne Verkaufsdruck."
+        description="Im kostenfreien Erstgespräch sortieren wir gemeinsam, was Sie wirklich brauchen, ganz ohne Verkaufsdruck."
       />
     </>
   );

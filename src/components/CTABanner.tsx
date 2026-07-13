@@ -4,7 +4,7 @@ import { company } from "@/lib/content";
 
 export default function CTABanner({
   title = "Bereit für eine Kanzlei, die mitdenkt?",
-  description = "Vereinbaren Sie ein kostenfreies Erstgespräch — wir melden uns in der Regel innerhalb eines Werktags mit einem Terminvorschlag.",
+  description = "Vereinbaren Sie ein kostenfreies Erstgespräch, wir melden uns in der Regel innerhalb eines Werktags mit einem Terminvorschlag.",
 }: {
   title?: string;
   description?: string;

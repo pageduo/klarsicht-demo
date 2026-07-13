@@ -26,7 +26,7 @@ export default function Testimonials() {
           ))}
         </div>
         <p className="mt-6 text-xs text-stone">
-          Aus Vertraulichkeitsgründen anonymisiert — wie in unserer echten Mandantenkommunikation.
+          Aus Vertraulichkeitsgründen anonymisiert, wie in unserer echten Mandantenkommunikation.
         </p>
       </div>
     </section>
