@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { services } from "@/lib/content";
+import { img } from "@/lib/images";
 
 const iconPaths: Record<string, string> = {
   doc: "M8 3h6l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z M14 3v4h4",
@@ -83,20 +85,20 @@ function Card({
         pointerEvents: isFront ? "auto" : "none",
         transformPerspective: 1400,
       }}
-      className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-[1.75rem] border border-ink/10 bg-paper p-7 shadow-[0_35px_70px_-30px_rgba(11,20,32,0.4)] sm:p-10"
+      className="absolute inset-0 flex flex-col overflow-hidden rounded-[1.75rem] border border-ink/10 bg-paper shadow-[0_35px_70px_-30px_rgba(11,20,32,0.4)] sm:flex-row"
       aria-hidden={!isFront}
     >
-      <div style={ledgerPattern} className="pointer-events-none absolute inset-0" />
-      <span className="pointer-events-none absolute -bottom-10 -right-4 select-none font-display text-[11rem] leading-none text-ink/[0.04] sm:text-[13rem]">
-        {String(index + 1).padStart(2, "0")}
-      </span>
-
-      <div className="relative flex items-start justify-between">
-        <span className="eyebrow text-stone">
-          0{index + 1} / 0{total}
-        </span>
-        <span className="flex h-14 w-14 items-center justify-center rounded-xl border border-gold/30 bg-gold/10 text-gold-dark">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <div className="relative h-36 w-full shrink-0 overflow-hidden sm:h-full sm:w-[40%]">
+        <Image
+          src={img.services[service.key]}
+          alt=""
+          fill
+          sizes="(min-width: 640px) 40vw, 100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent sm:bg-gradient-to-r" />
+        <span className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-xl border border-gold-light/40 bg-ink/60 text-gold-light backdrop-blur-sm sm:h-14 sm:w-14">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
             <path
               d={iconPaths[service.icon]}
               stroke="currentColor"
@@ -107,28 +109,38 @@ function Card({
             />
           </svg>
         </span>
+        <span className="absolute bottom-3 left-4 font-mono text-[11px] tracking-wide text-paper/80 sm:bottom-4">
+          0{index + 1} / 0{total}
+        </span>
       </div>
 
-      <div className="relative">
-        <h3 className="font-display text-2xl font-normal text-ink sm:text-4xl">{service.title}</h3>
-        <p className="mt-4 max-w-xl text-sm leading-relaxed text-stone sm:text-base">
-          {service.description}
-        </p>
+      <div className="relative flex flex-1 flex-col justify-between overflow-hidden p-6 sm:p-9">
+        <div style={ledgerPattern} className="pointer-events-none absolute inset-0" />
+        <span className="pointer-events-none absolute -bottom-8 -right-4 select-none font-display text-[9rem] leading-none text-ink/[0.04] sm:text-[11rem]">
+          {String(index + 1).padStart(2, "0")}
+        </span>
 
-        <div className="mt-5 flex flex-wrap gap-2">
-          {service.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-ink/12 px-3 py-1 font-mono text-[10px] uppercase tracking-wide text-stone"
-            >
-              {tag}
-            </span>
-          ))}
+        <div className="relative">
+          <h3 className="font-display text-xl font-normal text-ink sm:text-3xl">{service.title}</h3>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-stone sm:mt-4 sm:text-base">
+            {service.description}
+          </p>
+
+          <div className="mt-4 flex flex-wrap gap-2 sm:mt-5">
+            {service.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-ink/12 px-3 py-1 font-mono text-[10px] uppercase tracking-wide text-stone"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-6 flex items-end justify-between border-t border-ink/10 pt-5">
+        <div className="relative mt-5 flex items-end justify-between border-t border-ink/10 pt-4 sm:mt-6 sm:pt-5">
           <div>
-            <p className="font-mono text-xl font-medium text-ink sm:text-2xl">{service.stat.value}</p>
+            <p className="font-mono text-lg font-medium text-ink sm:text-2xl">{service.stat.value}</p>
             <p className="text-xs text-stone">{service.stat.label}</p>
           </div>
           <Link

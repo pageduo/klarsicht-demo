@@ -34,6 +34,16 @@ export const img = {
   // Analytics-Dashboard auf einem Laptop-Bildschirm.
   scrollyPoster: unsplash("1551288049-bebda4e38f71", 2000),
 
+  // Ein Foto je Leistungsfeld (Karteikarten-Deck + /leistungen-Grid).
+  services: {
+    "steuerberatung-unternehmen": unsplash("1554224154-26032ffc0d07", 1400),
+    wirtschaftspruefung: unsplash("1450101499163-c8848c66ca85", 1400),
+    privatpersonen: unsplash("1560472355-536de3962603", 1400),
+    unternehmensberatung: unsplash("1556761175-b413da4baf72", 1400),
+    gruendung: unsplash("1573167243872-43c6433b9d40", 1400),
+    nachfolge: unsplash("1507679799987-c73779587ccf", 1400),
+  } as Record<string, string>,
+
   // Branchen-Kacheln der horizontalen Scroll-Sektion.
   industries: {
     mittelstand: unsplash("1531973576160-7125cd663d86"),
