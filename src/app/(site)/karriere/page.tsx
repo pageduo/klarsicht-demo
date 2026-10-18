@@ -5,7 +5,7 @@ import { jobs, company } from "@/lib/content";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Karriere | KLARSICHT Demo",
+  title: "Karriere | KLARSICHT – Demo",
 };
 
 export default function KarrierePage() {

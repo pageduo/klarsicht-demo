@@ -10,7 +10,7 @@ import { company } from "@/lib/content";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Über uns & Kontakt | KLARSICHT Demo",
+  title: "Über uns & Kontakt | KLARSICHT – Demo",
 };
 
 export default function KontaktPage() {
@@ -62,9 +62,7 @@ export default function KontaktPage() {
                 <div>
                   <p className="eyebrow mb-2 text-stone">Kontakt</p>
                   <p className="text-sm leading-relaxed text-ink">
-                    <a href={company.phoneHref} className="block hover:text-gold-dark">
-                      {company.phone}
-                    </a>
+                    <span className="block">{company.phone}</span>
                     <a href={`mailto:${company.email}`} className="block hover:text-gold-dark">
                       {company.email}
                     </a>
@@ -86,8 +84,8 @@ export default function KontaktPage() {
               <div>
                 <p className="eyebrow mb-3 text-stone">Anfahrt</p>
                 <MapEmbed
-                  query={`${company.address.street}, ${company.address.zip} ${company.address.city}`}
-                  title={`Anfahrt zu ${company.fullName}`}
+                  ort={`${company.address.zip} ${company.address.city}`}
+                  title={`Standort von ${company.fullName} (fiktiv)`}
                 />
               </div>
             </Reveal>

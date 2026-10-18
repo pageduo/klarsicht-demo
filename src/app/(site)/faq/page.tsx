@@ -4,7 +4,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "FAQ | KLARSICHT Demo",
+  title: "FAQ | KLARSICHT – Demo",
 };
 
 export default function FAQPage() {

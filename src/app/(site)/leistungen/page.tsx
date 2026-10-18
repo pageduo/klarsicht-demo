@@ -8,7 +8,7 @@ import { services } from "@/lib/content";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Leistungen | KLARSICHT Demo",
+  title: "Leistungen | KLARSICHT – Demo",
 };
 
 const iconPaths: Record<string, string> = {

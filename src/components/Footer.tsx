@@ -45,9 +45,7 @@ export default function Footer() {
                 {company.address.street}, {company.address.zip} {company.address.city}
               </li>
               <li>
-                <a href={company.phoneHref} className="hover:text-paper">
-                  {company.phone}
-                </a>
+                <span className="block">{company.phone}</span>
               </li>
               <li>
                 <a href={`mailto:${company.email}`} className="hover:text-paper">
@@ -71,22 +69,29 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="/datenschutz#cookies" className="text-paper/70 hover:text-paper">
-                  Cookie-Einstellungen
-                </a>
+                <Link href="/datenschutz#cookies" className="text-paper/70 hover:text-paper">
+                  Cookie-Hinweise
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-2 border-t border-paper/10 pt-8 text-xs text-paper/40 sm:flex-row sm:items-center sm:justify-between">
+        {/* Demo-Kennzeichnung: die letzte Zeile der Seite, auf jeder Seite */}
+        <div className="mt-14 flex flex-col gap-2 border-t border-paper/10 pt-8 text-xs text-paper/50 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-2">
           <p>
-            © {year} {company.fullName}
+            Demo-Vorlage von PageDuo – kein echtes Unternehmen. Alle Namen, Daten und Inhalte sind
+            fiktiv.
           </p>
-          <p>Demo-Vorlage für Akquisezwecke, kein echtes Unternehmen, keine echte Rechts- oder Steuerberatung.</p>
-          <a href="/api/auth/logout" className="hover:text-paper/70">
-            Abmelden
-          </a>
+          <p className="flex gap-2">
+            <Link href="/impressum" className="underline underline-offset-4 hover:text-paper">
+              Impressum
+            </Link>
+            <span aria-hidden className="text-paper/25">·</span>
+            <Link href="/datenschutz" className="underline underline-offset-4 hover:text-paper">
+              Datenschutz
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

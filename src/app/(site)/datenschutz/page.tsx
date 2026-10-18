@@ -1,100 +1,85 @@
 import type { Metadata } from "next";
 import LegalHero from "@/components/LegalHero";
-import ResetConsentButton from "@/components/ResetConsentButton";
-import { company } from "@/lib/content";
+import DemoHinweis from "@/components/DemoHinweis";
+import { PAGEDUO_URL } from "@/lib/pageduo";
 
 export const metadata: Metadata = {
-  title: "Datenschutzerklärung (Platzhalter) | KLARSICHT Demo",
+  title: "Datenschutzerklärung | KLARSICHT – Demo",
 };
 
+const knopf =
+  "group inline-flex items-center gap-3 rounded-full bg-slate px-7 py-3.5 text-sm font-semibold text-paper transition hover:bg-ink";
+
+function Pfeil() {
+  return (
+    <span aria-hidden className="transition-transform group-hover:translate-x-1">
+      →
+    </span>
+  );
+}
+
+/*
+ * Verantwortlich im Sinne der DSGVO ist, wer ueber die Verarbeitung
+ * entscheidet - hier die Agentur, nicht die erfundene Kanzlei. Die frueheren
+ * Abschnitte zu Google Maps und zur berufsrechtlichen Verschwiegenheit sind
+ * entfallen: Die Karte gibt es nicht mehr, und eine Verschwiegenheitspflicht
+ * nach StBerG trifft eine Kanzlei, die es nicht gibt, nicht.
+ */
 export default function DatenschutzPage() {
   return (
     <>
       <LegalHero eyebrow="// Rechtliches" title="Datenschutzerklärung" />
       <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
+        <DemoHinweis className="mb-10" />
+
         <div className="flex flex-col gap-10 text-sm leading-relaxed text-stone">
           <section>
-            <h2 className="mb-3 font-display text-xl font-normal text-ink">1. Verantwortlicher</h2>
-            <p>
-              {company.fullName} (fiktiv), {company.address.street}, {company.address.zip}{" "}
-              {company.address.city}. E-Mail: {company.email}. Diese Angaben sind Platzhalter für
-              eine Demo-Website und beziehen sich auf kein reales Unternehmen.
-            </p>
-          </section>
-
-          <section>
             <h2 className="mb-3 font-display text-xl font-normal text-ink">
-              2. Hosting & Server-Logfiles
+              Formulare und Buchung
             </h2>
             <p>
-              Diese Demo wird auf einer Vercel-Subdomain gehostet. Beim Aufruf der Seite werden
-              technisch notwendige Zugriffsdaten (u. a. IP-Adresse, Datum, aufgerufene Seite)
-              temporär verarbeitet, um die Auslieferung der Seite zu ermöglichen.
+              Formulare und Buchungsfunktionen dieser Demo sind deaktiviert. Es werden keine
+              eingegebenen Daten übermittelt oder gespeichert. Für den technischen Betrieb dieser
+              Website gilt die Datenschutzerklärung von PageDuo:
             </p>
+            <a
+              href={`${PAGEDUO_URL}/datenschutz`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${knopf} mt-6`}
+            >
+              Datenschutzerklärung von PageDuo
+              <Pfeil />
+            </a>
+          </section>
+
+          <section id="cookies" className="scroll-mt-28">
+            <h2 className="mb-3 font-display text-xl font-normal text-ink">Cookies</h2>
+            <p>
+              Diese Demo setzt keine Cookies und bindet keine Karten ein. Der Hinweisbalken am
+              unteren Rand ist eine
+              Demo-Ansicht: Er zeigt, wie ein Einwilligungsbanner auf der fertigen Seite aussähe,
+              und merkt sich lediglich im Browser, dass Sie ihn geschlossen haben. Zu den
+              eingebundenen Fotos und Videos siehe unten.
+            </p>
+            <a
+              href={`${PAGEDUO_URL}/cookies`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${knopf} mt-6`}
+            >
+              Cookie-Hinweise von PageDuo
+              <Pfeil />
+            </a>
           </section>
 
           <section>
-            <h2 className="mb-3 font-display text-xl font-normal text-ink">3. Schriftarten</h2>
+            <h2 className="mb-3 font-display text-xl font-normal text-ink">Eingebundene Medien</h2>
             <p>
-              Die verwendeten Schriftarten (Instrument Serif, IBM Plex Sans, IBM Plex Mono) werden
-              über <code>next/font</code> lokal ausgeliefert. Es findet keine Verbindung zu
-              Google-Servern statt, es werden keine Daten an Google übertragen.
-            </p>
-          </section>
-
-          <section id="cookies">
-            <h2 className="mb-3 font-display text-xl font-normal text-ink">
-              4. Cookies & Einwilligung
-            </h2>
-            <p>
-              Diese Website verwendet ausschließlich technisch notwendige Cookies sowie einen
-              lokalen Speichereintrag (Local Storage), um Ihre Cookie-Auswahl zu merken. Für die
-              Einbindung der Google-Maps-Karte auf der Seite „Über uns &amp; Kontakt&ldquo; fragen wir vor
-              dem Laden separat Ihre Zustimmung ab, da hierbei Ihre IP-Adresse an Google übertragen
-              wird.
-            </p>
-            <div className="mt-4">
-              <ResetConsentButton />
-            </div>
-          </section>
-
-          <section>
-            <h2 className="mb-3 font-display text-xl font-normal text-ink">5. Google Maps</h2>
-            <p>
-              Nach Ihrer Zustimmung wird eine Karte des Anbieters Google Ireland Limited eingebunden.
-              Dabei kann Google Daten wie Ihre IP-Adresse verarbeiten und ggf. in die USA
-              übertragen. Weitere Informationen finden Sie in der Datenschutzerklärung von Google.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="mb-3 font-display text-xl font-normal text-ink">6. Kontaktformular</h2>
-            <p>
-              Das Kontaktformular auf dieser Demo-Website versendet keine echten Daten. Es ist
-              rein zu Demonstrationszwecken funktionsfähig gestaltet. In einer echten Umsetzung
-              würden hier eingegebene Daten (Name, E-Mail, Nachricht) ausschließlich zur
-              Bearbeitung Ihrer Anfrage verarbeitet und nach Erledigung des Mandats gemäß den
-              gesetzlichen Aufbewahrungsfristen gelöscht.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="mb-3 font-display text-xl font-normal text-ink">
-              7. Berufsrechtliche Verschwiegenheit
-            </h2>
-            <p>
-              Angaben, die uns im Rahmen eines Mandats anvertraut werden, unterliegen der
-              gesetzlichen Verschwiegenheitspflicht nach § 57 StBerG bzw. § 43 WPO. Diese Pflicht
-              gilt unabhängig von den allgemeinen datenschutzrechtlichen Vorgaben dieser Erklärung.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="mb-3 font-display text-xl font-normal text-ink">8. Ihre Rechte</h2>
-            <p>
-              Ihnen stehen die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der
-              Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer
-              personenbezogenen Daten nach Art. 15–21 DSGVO zu.
+              Die Fotos und Videos dieser Demo liegen bei Unsplash und Pexels und werden beim
+              Seitenaufruf von dort geladen. Dabei erhält der jeweilige Anbieter die IP-Adresse
+              Ihres Geräts. Für eine echte Kundenseite werden diese Medien durch eigenes,
+              lokal ausgeliefertes Material ersetzt.
             </p>
           </section>
         </div>

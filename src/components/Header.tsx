@@ -52,14 +52,13 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-4">
-            <a
-              href={company.phoneHref}
+            <span
               className={`hidden font-mono text-sm sm:block ${
                 compact ? "text-ink" : "text-paper"
               }`}
             >
               {company.phone}
-            </a>
+            </span>
             <Link
               href="/kontakt"
               className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-gold-light sm:block"
@@ -119,7 +118,7 @@ export default function Header() {
               ))}
             </nav>
             <div className="flex flex-col gap-2 px-8 pb-10 text-sm text-paper/70">
-              <a href={company.phoneHref}>{company.phone}</a>
+              <span>{company.phone}</span>
               <a href={`mailto:${company.email}`}>{company.email}</a>
             </div>
           </motion.div>

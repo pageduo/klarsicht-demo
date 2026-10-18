@@ -8,7 +8,7 @@ import { img } from "@/lib/images";
 import { videos } from "@/lib/videos";
 
 export const metadata: Metadata = {
-  title: "Blog | KLARSICHT Demo",
+  title: "Blog | KLARSICHT – Demo",
 };
 
 function formatDate(date: string) {

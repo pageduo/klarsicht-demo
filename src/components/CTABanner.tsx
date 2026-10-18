@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DemoAction from "@/components/DemoAction";
 import Reveal from "./Reveal";
 import { company } from "@/lib/content";
 
@@ -24,12 +25,12 @@ export default function CTABanner({
             >
               Erstgespräch vereinbaren
             </Link>
-            <a
-              href={company.phoneHref}
+            <DemoAction
+              ariaLabel={`Anrufen: ${company.phone}`}
               className="rounded-full border border-ink/30 px-7 py-3.5 text-sm font-semibold text-ink transition hover:bg-ink/10"
             >
               {company.phone}
-            </a>
+            </DemoAction>
           </div>
         </Reveal>
       </div>

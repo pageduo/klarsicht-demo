@@ -21,7 +21,12 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-const title = "KLARSICHT Steuerberatung & Wirtschaftsprüfung: Hamburg | Demo-Website";
+const title = "KLARSICHT Steuerberatung & Wirtschaftsprüfung, Hamburg – Demo";
+/* Das OG-Bild lag als Unsplash-Hotlink im Kopf der Seite. Es steht jetzt
+   neben den uebrigen Bildquellen in lib/images.ts, damit das Medien-Audit
+   nur an einer Stelle nachsehen muss. */
+const heroBild = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200";
+
 const description =
   "Demo-Website für eine moderne Steuerberatungs- und Wirtschaftsprüfungskanzlei in Hamburg: Steuerberatung, Jahresabschlussprüfung, Unternehmensberatung und Nachfolgeplanung. Diese Seite ist eine Agentur-Demo und kein echtes Unternehmen.";
 
@@ -37,7 +42,7 @@ export const metadata: Metadata = {
     description,
     locale: "de_DE",
     type: "website",
-    images: ["https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200"],
+    images: [heroBild],
   },
 };
 

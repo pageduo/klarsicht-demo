@@ -6,7 +6,7 @@ import { processSteps } from "@/lib/content";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Ablauf | KLARSICHT Demo",
+  title: "Ablauf | KLARSICHT – Demo",
 };
 
 export default function AblaufPage() {

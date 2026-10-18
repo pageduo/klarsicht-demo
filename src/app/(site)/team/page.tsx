@@ -8,7 +8,7 @@ import { team } from "@/lib/content";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Team | KLARSICHT Demo",
+  title: "Team | KLARSICHT – Demo",
 };
 
 export default function TeamPage() {

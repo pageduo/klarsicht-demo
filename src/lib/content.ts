@@ -1,3 +1,5 @@
+import { DEMO_SLUG } from "./pageduo";
+
 export const company = {
   name: "KLARSICHT",
   fullName: "KLARSICHT Steuerberatung & Wirtschaftsprüfung PartG mbB",
@@ -9,12 +11,21 @@ export const company = {
     "Eine Hamburger Kanzlei für Steuerberatung, Wirtschaftsprüfung und Unternehmensberatung, digital, direkt und ohne Aktenstaub.",
   usp:
     "Wir verbinden Steuerberatung und Wirtschaftsprüfung unter einem Dach, mit einem Mandantenportal statt Papierstapeln und Beraterinnen und Beratern, die in Szenarien denken statt nur in Paragrafen.",
-  phone: "+49 40 2288 4170",
-  phoneHref: "tel:+494022884170",
-  email: "mandat@klarsicht-demo.de",
+  /*
+   * Erfunden reicht nicht, erfunden muss auch unerreichbar sein. Die
+   * frueheren Werte (Am Sandtorkai 32, eine Hamburger Rufnummer, eine
+   * .de-Domain) sahen echt aus, weil sie echt aussehen sollten - und genau
+   * deshalb haetten sie irgendwann jemanden getroffen, den es wirklich gibt.
+   *
+   * `.example` ist nach RFC 2606 reserviert und wird nie vergeben, 20000 ist
+   * keine vergebene Postleitzahl, und die Rufnummer besteht aus Nullen. Sie
+   * steht ohne tel:-Link da, damit sie niemand versehentlich waehlt.
+   */
+  phone: "+49 (0)40 000 000-00",
+  email: `muster@${DEMO_SLUG}.example`,
   address: {
-    street: "Am Sandtorkai 32",
-    zip: "20457",
+    street: "Musterstraße 1",
+    zip: "20000",
     city: "Hamburg",
   },
   hours: [
@@ -43,11 +54,19 @@ export const stats = [
   { value: 24, suffix: "", label: "Kolleg:innen im Team" },
 ];
 
+/*
+ * Die Leiste trug frueher "Steuerberaterkammer Hamburg",
+ * "Wirtschaftspruefkammer", "Mitglied DStV" und "DATEV-Kanzlei". Das sind
+ * echte Kammern, ein echter Verband und ein echtes Produkt - eine erfundene
+ * Kanzlei kann dort nicht Mitglied sein, und die Behauptung waere keine
+ * Auszeichnung, sondern eine falsche Angabe mit fremdem Namen. Jetzt stehen
+ * dort Eigenschaften, die die Demo selbst zeigt.
+ */
 export const trustBadges = [
-  "Steuerberaterkammer Hamburg",
-  "Wirtschaftsprüferkammer",
-  "Mitglied DStV",
-  "DATEV-Kanzlei",
+  "Digitale Mandatsführung",
+  "Feste Ansprechpartner:innen",
+  "Termine auch remote",
+  "Demo-Vorlage von PageDuo",
 ];
 
 export const services = [
