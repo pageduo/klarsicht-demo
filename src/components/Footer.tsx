@@ -2,8 +2,6 @@ import Link from "next/link";
 import { company, navPages } from "@/lib/content";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="bg-ink text-paper">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
@@ -80,8 +78,8 @@ export default function Footer() {
         {/* Demo-Kennzeichnung: die letzte Zeile der Seite, auf jeder Seite */}
         <div className="mt-14 flex flex-col gap-2 border-t border-paper/10 pt-8 text-xs text-paper/50 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-2">
           <p>
-            Demo-Vorlage von PageDuo – kein echtes Unternehmen. Alle Namen, Daten und Inhalte sind
-            fiktiv.
+            © {new Date().getFullYear()} · Demo-Vorlage von PageDuo – kein echtes Unternehmen.
+            Alle Namen, Daten und Inhalte sind fiktiv.
           </p>
           <p className="flex gap-2">
             <Link href="/impressum" className="underline underline-offset-4 hover:text-paper">
